@@ -53,7 +53,8 @@ activando el `.venv` a mano. Todos los comandos van desde ahí:
 
 ```
 uv run python capstone/descargar.py --prueba     # verifica que la API responda
-uv run python capstone/descargar.py              # baja la muestra (unos minutos)
+uv run python capstone/descarga_temporada.py --femenino              # baja la muestra de mujeres (unos minutos)
+uv run python capstone/descarga_temporada.py --masculino              # baja la muestra de hombres (unos minutos)
 uv run python capstone/factor_implicito_wa.py    # marcas mínimas vs. factor medido
 uv run python capstone/formulacion.py            # regenera el PDF de la formulación
 uv run python capstone/entrega_eda.py            # regenera el PDF con el link al repo

@@ -96,7 +96,10 @@ def main():
     # redondeado, y con 3 decimales el redondeo mueve la brecha hasta 0,1 s
     # (100 libre masculino pasaba de -0,02 a -0,04 s).
     pares = pd.read_csv(DATOS / "pares_lcm_scm.csv",
-                        usecols=["sexo", "estilo", "distancia", "factor"])
+                        usecols=["sexo", "estilo", "distancia", "factor_tiempo_mediana"])
+
+    pares = pares.rename(columns = {"factor_tiempo_mediana":"factor"})
+
     nuestro = (pares.groupby(["sexo", "estilo", "distancia"])["factor"]
                     .agg(n_pares="size", factor_real="median")
                     .reset_index())
